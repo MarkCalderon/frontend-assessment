@@ -1,0 +1,35 @@
+-
+    const newList = [
+        {
+            id: "new-01",
+            title: "Section 1",
+            src: "http://via.placeholder.com/400x300",
+            content: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+            link: "javascript:void(0);"
+        },
+        {
+            id: 'new-02',
+            title: "Section 2",
+            src: 'http://via.placeholder.com/400x300',
+            content: "<p>lorem ipsum dolor sit amet. consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>",
+            link: "javascript:void(0);"
+        },
+        {
+            id: 'new-03',
+            title: "Section 3",
+            src: "http://via.placeholder.com/400x300",
+            content: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco.</p>",
+            link: "javascript:void(0);"
+        },
+    ]
+
+section.new
+    .new-inner
+        ul.new-list
+            - const setList = newList.splice(0,3)
+            each item in setList
+                li.new-item(id=`${item.id}` data-aos="fade-up" data-aos-delay=`${i + '00'}`)
+                    figure.new-itemfigurearea
+                        img.new-itemfigurethumb(src=`${item.src}`, alt=`${item.title}`)
+                    .new-itemtextarea !{item.content}
+                        button.new-itemanchor(href=`${item.link}`) READ MORE

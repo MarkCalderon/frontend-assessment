@@ -1,0 +1,74 @@
+// NEW
+
+.new {
+    &-inner {
+        margin: 38px auto;
+        padding: 0 15px;
+        max-width: 1086px;
+    }
+
+    &-list {
+        @include u-flex($fw: nowrap);
+        @include u-mqMax {
+            flex-flow: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &-item {
+        position: relative;
+        padding: 20px 20px 81px;
+        width: 100%;
+        max-width: 328px;
+        border-radius: 5px;
+        box-shadow: 0px 1px 1px 2px #f0f0f0;
+        &:not(:first-child) {
+            margin-left: 38px;
+            @include u-mqMax {
+                margin-top: 38px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &-itemfigurethumb {
+        border-radius: 5px;
+    }
+
+    &-itemtextarea {
+        margin-top: 15px;
+        p {
+            font: 100 1rem/1.5 $Roboto;
+            text-align: center;
+        }
+
+        ul {
+            font: 100 1rem/1.5 $Roboto;
+        }
+    }
+
+    &-itemanchor {
+        width: 100%;
+        max-width: 154px;
+        height: 44px;
+        position: absolute;
+        outline: none;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 2px solid $black;
+        background-color: $white;
+        border-radius: 20px;
+        font: bold 1rem/1.5 $Roboto;
+        color: $black;
+        cursor: pointer;
+        transition: .5s ease;
+
+        &:hover {
+            background-color: $black;
+            color: $white;
+        }
+    }
+}

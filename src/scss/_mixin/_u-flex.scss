@@ -1,0 +1,9 @@
+@mixin u-flex($jc: space-between, $ai: stretch, $fw: row wrap, $fd: '') {
+  display: flex;
+  flex-flow: $fw;
+  justify-content: $jc;
+  align-items: $ai;
+  @if $fd !='' {
+    flex-direction: column;
+  }
+}

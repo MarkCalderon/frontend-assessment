@@ -1,0 +1,42 @@
+// kV
+.kv {
+  $this: &;
+  background: center / cover no-repeat url('http://via.placeholder.com/1920x650');
+  @include u-mqMax {
+    background-image: url('http://via.placeholder.com/600x600');
+  }
+
+  &-inner {
+    margin: auto;
+    padding: 0 15px;
+    max-width: 1086px;
+    min-height: 550px;
+    width: 100%;
+    @include u-flex($jc: center);
+    @include u-mqMax {
+      min-height: 376px;
+    }
+  }
+
+  &-textarea {
+    width: 100%;
+    @include u-flex($jc: center, $ai: center, $fd: column);
+  }
+
+  &-titletext {
+    font-size: 2rem;
+    color: $white;
+    @include u-mqMax {
+      text-align: center;
+    }
+  }
+
+  &-subtext {
+    font-size: 1.2rem;
+    color: $white;
+    @include u-mqMax {
+      text-align: center;
+    }
+  }
+
+}
