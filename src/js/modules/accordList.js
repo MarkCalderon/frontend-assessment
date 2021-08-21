@@ -5,17 +5,18 @@ export const accordList = () => {
   const loadData = new Promise((resolve, reject) => {
     let list = document.getElementById('accord-list')
     const sourceList = require('../../data/data.json')
-    const data = sourceList.splice(0,3);
+
+    console.table(sourceList)
 
     if(list) {
-      data.forEach((item, index) => {
+      sourceList.forEach((item, index) => {
+        console.log(index)
         list.innerHTML += `
           <li class="accord-item" data-aos="fade-up" data-aos-delay="${index}00">
             <div class="accord-itemtitle" data-accord="accord-${index}">
               <p class="accord-itemtitletext">${item['title']}</p>
-              <div class="accord-itemarrow"></div>
             </div>
-            <div class="accord-itemcontent" id="accord-${index}">${item['content']}</div>
+            <div class="accord-itemcontent ${(index == 0) ? 'isToggle' : ''}" id="accord-${index}">${item['content']}</div>
           </li>
         `
       })
