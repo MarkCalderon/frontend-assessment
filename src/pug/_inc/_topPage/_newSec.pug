@@ -25,7 +25,7 @@
 
 section.new
     .new-inner
-        ul.new-list
+        ul.new-list(id="new-list")
             - const setList = newList.splice(0,3)
             each item in setList
                 li.new-item(id=`${item.id}` data-aos="fade-up" data-aos-delay=`${i + '00'}`)

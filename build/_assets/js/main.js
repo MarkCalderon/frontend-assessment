@@ -26,7 +26,7 @@ eval("!function(e,t){ true?module.exports=t():0}(this,function(){return function
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/polyfill */ \"./src/js/modules/polyfill.js\");\n/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordion */ \"./src/js/modules/accordion.js\");\n/* harmony import */ var _modules_aos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/aos */ \"./src/js/modules/aos.js\");\n\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_modules_polyfill__WEBPACK_IMPORTED_MODULE_0__.polyfill)();\n  (0,_modules_accordion__WEBPACK_IMPORTED_MODULE_1__.accordion)();\n  (0,_modules_aos__WEBPACK_IMPORTED_MODULE_2__.aos)();\n});\n\n//# sourceURL=webpack://frontend-assessment/./src/js/Index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/polyfill */ \"./src/js/modules/polyfill.js\");\n/* harmony import */ var _modules_newList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/newList */ \"./src/js/modules/newList.js\");\n/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/accordion */ \"./src/js/modules/accordion.js\");\n/* harmony import */ var _modules_aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/aos */ \"./src/js/modules/aos.js\");\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_modules_polyfill__WEBPACK_IMPORTED_MODULE_0__.polyfill)();\n  (0,_modules_accordion__WEBPACK_IMPORTED_MODULE_2__.accordion)();\n  (0,_modules_aos__WEBPACK_IMPORTED_MODULE_3__.aos)(); // newList()\n});\n\n//# sourceURL=webpack://frontend-assessment/./src/js/Index.js?");
 
 /***/ }),
 
@@ -52,6 +52,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/js/modules/newList.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/newList.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"newList\": () => (/* binding */ newList)\n/* harmony export */ });\nvar newList = function newList() {\n  var list = document.getElementById('new-list');\n\n  var sourceList = __webpack_require__(/*! ../../data/data.json */ \"./src/data/data.json\");\n\n  var data = sourceList.splice(0, 3);\n\n  if (list) {\n    data.forEach(function (item, index) {\n      list.innerHTML += \"\\n        <li class=\\\"new-item\\\" id=\\\"new-01\\\" data-aos=\\\"fade-up\\\" data-aos-delay=\\\"\".concat(index, \"00\\\">\\n          <figure class=\\\"new-itemfigurearea\\\"><img class=\\\"new-itemfigurethumb\\\" src=\\\"\").concat(item['src'], \"\\\" alt=\\\"Section 1\\\"></figure>\\n          <div class=\\\"new-itemtextarea\\\"><p>\").concat(item['content'], \"</p>\\n            <button class=\\\"new-itemanchor\\\" href=\\\"\").concat(item['link'], \"\\\">READ MORE</button>\\n          </div>\\n        </li>\\n      \");\n    });\n  }\n};\n\n//# sourceURL=webpack://frontend-assessment/./src/js/modules/newList.js?");
+
+/***/ }),
+
 /***/ "./src/js/modules/polyfill.js":
 /*!************************************!*\
   !*** ./src/js/modules/polyfill.js ***!
@@ -60,6 +71,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"polyfill\": () => (/* binding */ polyfill)\n/* harmony export */ });\nvar polyfill = function polyfill() {\n  if (window.NodeList && !NodeList.prototype.forEach) {\n    NodeList.prototype.forEach = Array.prototype.forEach;\n  }\n};\n\n//# sourceURL=webpack://frontend-assessment/./src/js/modules/polyfill.js?");
+
+/***/ }),
+
+/***/ "./src/data/data.json":
+/*!****************************!*\
+  !*** ./src/data/data.json ***!
+  \****************************/
+/***/ ((module) => {
+
+"use strict";
+eval("module.exports = JSON.parse('[{\"id\":\"new-01\",\"title\":\"Section 1\",\"src\":\"http://via.placeholder.com/400x300\",\"content\":\"<p>Maecenas nec semper ante, pellentesque posuere lorem. Nullam ipsum massa, consequat eget urna ut, pulvinar dignissim lorem. Nulla facilisi. Nam mattis eleifend metus. Fusce at commodo lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pellentesque elit sem, vel blandit posuere.</p>\",\"link\":\"javascript:void(0);\"},{\"id\":\"new-02\",\"title\":\"Section 2\",\"src\":\"http://via.placeholder.com/400x300\",\"content\":\"<p>Mauris a orci sodales, scelerisque velit vitae, gravida nisl. Ut non laoreet eros, vel laoreet nisi. Praesent sed dolor dui. Proin non fringilla quam. Aliquam erat volutpat. Vestibulum vel arcu semper, lobortis turpis ac, ultricies nisi. Praesent id.</p>\",\"link\":\"javascript:void(0);\"},{\"id\":\"new-03\",\"title\":\"Section 3\",\"src\":\"http://via.placeholder.com/400x300\",\"content\":\"<p>Sed elementum sapien ut sapien imperdiet, eu venenatis enim rhoncus. Praesent euismod tincidunt rhoncus. Duis cras amet:</p><ul><li>List item one</li><li>List item two</li><li>List item three</li></ul>\",\"link\":\"javascript:void(0);\"},{\"id\":\"new-04\",\"title\":\"Section 4\",\"src\":\"http://via.placeholder.com/400x300\",\"content\":\"<p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est.</p><p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>\",\"link\":\"javascript:void(0);\"}]');\n\n//# sourceURL=webpack://frontend-assessment/./src/data/data.json?");
 
 /***/ })
 
