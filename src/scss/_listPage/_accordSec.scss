@@ -1,0 +1,44 @@
+.accord {
+    $this: &;
+
+    &-inner {
+        margin: 15px auto 0;
+        padding: 0 15px;
+        max-width: 1086px;
+    }
+
+    &-item {
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+
+    &-itemtitle {
+        padding: 0 20px;
+        background-color: $gray;
+        font-size: 1.5rem;
+        color: $white;
+    }
+
+    &-itemtitletext {
+        pointer-events: none;
+    }
+
+    &-itemcontent {
+        height: 0;
+        overflow: hidden;
+        transition: .5s ease;
+
+        &.isToggle {
+            height: auto;
+        }
+
+        p {
+            font: 100 1rem/1.5 $Roboto;
+        }
+
+        ul {
+            font: 100 1rem/1.5 $Roboto;
+        }
+    }
+}

@@ -26,18 +26,18 @@ eval("!function(e,t){ true?module.exports=t():0}(this,function(){return function
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/polyfill */ \"./src/js/modules/polyfill.js\");\n/* harmony import */ var _modules_newList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/newList */ \"./src/js/modules/newList.js\");\n/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/accordion */ \"./src/js/modules/accordion.js\");\n/* harmony import */ var _modules_aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/aos */ \"./src/js/modules/aos.js\");\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_modules_polyfill__WEBPACK_IMPORTED_MODULE_0__.polyfill)();\n  (0,_modules_accordion__WEBPACK_IMPORTED_MODULE_2__.accordion)();\n  (0,_modules_aos__WEBPACK_IMPORTED_MODULE_3__.aos)(); // newList()\n});\n\n//# sourceURL=webpack://frontend-assessment/./src/js/Index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/polyfill */ \"./src/js/modules/polyfill.js\");\n/* harmony import */ var _modules_accordList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordList */ \"./src/js/modules/accordList.js\");\n/* harmony import */ var _modules_aos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/aos */ \"./src/js/modules/aos.js\");\n\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_modules_polyfill__WEBPACK_IMPORTED_MODULE_0__.polyfill)();\n  (0,_modules_aos__WEBPACK_IMPORTED_MODULE_2__.aos)();\n  (0,_modules_accordList__WEBPACK_IMPORTED_MODULE_1__.accordList)();\n});\n\n//# sourceURL=webpack://frontend-assessment/./src/js/Index.js?");
 
 /***/ }),
 
-/***/ "./src/js/modules/accordion.js":
-/*!*************************************!*\
-  !*** ./src/js/modules/accordion.js ***!
-  \*************************************/
+/***/ "./src/js/modules/accordList.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/accordList.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"accordion\": () => (/* binding */ accordion)\n/* harmony export */ });\nvar accordion = function accordion() {\n  var button = document.querySelectorAll('[data-accord]');\n\n  if (button.length) {\n    button.forEach(function (item) {\n      item.addEventListener('click', function (e) {\n        e.preventDefault();\n        var target = e.target.getAttribute('data-accord');\n        document.getElementById(target).classList.toggle('u-isToggle');\n      });\n    });\n  }\n};\n\n//# sourceURL=webpack://frontend-assessment/./src/js/modules/accordion.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"accordList\": () => (/* binding */ accordList)\n/* harmony export */ });\nvar accordList = function accordList() {\n  // Function: loadData\n  // Retrieves and map the data.\n  var loadData = new Promise(function (resolve, reject) {\n    var list = document.getElementById('accord-list');\n\n    var sourceList = __webpack_require__(/*! ../../data/data.json */ \"./src/data/data.json\");\n\n    var data = sourceList.splice(0, 3);\n\n    if (list) {\n      data.forEach(function (item, index) {\n        list.innerHTML += \"\\n          <li class=\\\"accord-item\\\" data-aos=\\\"fade-up\\\" data-aos-delay=\\\"\".concat(index, \"00\\\">\\n            <div class=\\\"accord-itemtitle\\\" data-accord=\\\"accord-\").concat(index, \"\\\">\\n              <p class=\\\"accord-itemtitletext\\\">\").concat(item['title'], \"</p>\\n              <div class=\\\"accord-itemarrow\\\"></div>\\n            </div>\\n            <div class=\\\"accord-itemcontent\\\" id=\\\"accord-\").concat(index, \"\\\">\").concat(item['content'], \"</div>\\n          </li>\\n        \");\n      });\n    }\n\n    setTimeout(function () {\n      resolve('success');\n    }, 300);\n  }); // Function: addControl\n  // Accordion control for showing/hiding content.\n\n  var addControl = function addControl() {\n    var button = document.querySelectorAll('[data-accord]');\n    var content = document.querySelectorAll('.accord-itemcontent');\n\n    if (button.length) {\n      button.forEach(function (item) {\n        item.addEventListener('click', function (e) {\n          e.preventDefault();\n          var target = e.target.getAttribute('data-accord');\n          var id = document.getElementById(target); // If the same opened content is selected and opened.\n\n          if (id.classList.contains('isToggle')) {\n            // Hide the selected content.\n            id.classList.remove('isToggle');\n          } // If a different content is selected.\n          else {\n            // Hides all the content.\n            content.forEach(function (contentItem) {\n              contentItem.classList.remove('isToggle');\n            }); // Show the selected content.\n\n            id.classList.add('isToggle');\n          }\n        });\n      });\n    }\n  };\n\n  loadData.then( // After successfully loading the data.\n  function (response) {\n    // console.log(response)\n    addControl();\n  })[\"catch\"](function (err) {// console.log(err)\n  });\n};\n\n//# sourceURL=webpack://frontend-assessment/./src/js/modules/accordList.js?");
 
 /***/ }),
 
@@ -49,17 +49,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"aos\": () => (/* binding */ aos)\n/* harmony export */ });\n/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aos */ \"./node_modules/aos/dist/aos.js\");\n/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_0__);\n\nvar aos = function aos() {\n  aos__WEBPACK_IMPORTED_MODULE_0___default().init({\n    useClassNames: true,\n    once: true,\n    delay: 0,\n    duration: 1000\n  });\n};\n\n//# sourceURL=webpack://frontend-assessment/./src/js/modules/aos.js?");
-
-/***/ }),
-
-/***/ "./src/js/modules/newList.js":
-/*!***********************************!*\
-  !*** ./src/js/modules/newList.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"newList\": () => (/* binding */ newList)\n/* harmony export */ });\nvar newList = function newList() {\n  var list = document.getElementById('new-list');\n\n  var sourceList = __webpack_require__(/*! ../../data/data.json */ \"./src/data/data.json\");\n\n  var data = sourceList.splice(0, 3);\n\n  if (list) {\n    data.forEach(function (item, index) {\n      list.innerHTML += \"\\n        <li class=\\\"new-item\\\" id=\\\"new-01\\\" data-aos=\\\"fade-up\\\" data-aos-delay=\\\"\".concat(index, \"00\\\">\\n          <figure class=\\\"new-itemfigurearea\\\"><img class=\\\"new-itemfigurethumb\\\" src=\\\"\").concat(item['src'], \"\\\" alt=\\\"Section 1\\\"></figure>\\n          <div class=\\\"new-itemtextarea\\\"><p>\").concat(item['content'], \"</p>\\n            <button class=\\\"new-itemanchor\\\" href=\\\"\").concat(item['link'], \"\\\">READ MORE</button>\\n          </div>\\n        </li>\\n      \");\n    });\n  }\n};\n\n//# sourceURL=webpack://frontend-assessment/./src/js/modules/newList.js?");
 
 /***/ }),
 
