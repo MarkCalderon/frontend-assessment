@@ -1,0 +1,26 @@
+.bonus {
+  $this: &;
+
+  &-inner {
+    padding: 30px 15px 0;
+    margin: 30px auto 0;
+    border-top: 5px solid $black;
+    max-width: 1086px;
+  }
+
+  &-question {
+    font-size: 1.5rem;
+    &:before {
+      display: inline-block;
+
+    }
+  }
+
+  &-answer {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: $lightgray;
+    font-size: 1rem;
+    display: inline-block;
+  }
+}

@@ -1,55 +1,56 @@
 .accord {
-    $this: &;
+  $this: &;
 
-    &-inner {
-        margin: 15px auto 0;
-        padding: 0 15px;
-        max-width: 1086px;
+  &-inner {
+    margin: 15px auto 0;
+    padding: 0 15px;
+    max-width: 1086px;
+  }
+
+  &-item {
+    &:not(:first-child) {
+      margin-top: 10px;
     }
 
-    &-item {
-        &:not(:first-child) {
-            margin-top: 10px;
-        }
+    &:hover {
+      cursor: pointer;
 
-        &:hover {
-            cursor: pointer;
-            #{$this}-itemtitle {
-                background-color: $lightgray;
-                color: $black;
-            }
-        }
+      #{$this}-itemtitle {
+        background-color: $lightgray;
+        color: $black;
+      }
+    }
+  }
+
+  &-itemtitle {
+    padding: 0 20px;
+    background-color: $gray;
+    border: 3px solid $gray;
+    font-size: 1.5rem;
+    color: $white;
+    transition: .5s ease;
+    border-radius: 10px;
+  }
+
+  &-itemtitletext {
+    pointer-events: none;
+  }
+
+  &-itemcontent {
+    max-height: 0;
+    overflow: hidden;
+    transition: .7s linear;
+
+    &.isToggle {
+      max-height: 100px;
     }
 
-    &-itemtitle {
-        padding: 0 20px;
-        background-color: $gray;
-        border: 3px solid $gray;
-        font-size: 1.5rem;
-        color: $white;
-        transition: .5s ease;
-        border-radius: 10px;
+    p {
+      font: 100 1rem/1.5 $Roboto;
     }
 
-    &-itemtitletext {
-        pointer-events: none;
+    ul {
+      font: 100 1rem/1.5 $Roboto;
     }
-
-    &-itemcontent {
-        max-height: 0;
-        overflow: hidden;
-        transition: .7s linear;
-
-        &.isToggle {
-            max-height: 100px;
-        }
-
-        p {
-            font: 100 1rem/1.5 $Roboto;
-        }
-
-        ul {
-            font: 100 1rem/1.5 $Roboto;
-        }
-    }
+  }
 }

@@ -1,13 +1,13 @@
 .u-spDb {
-    display: none;
+  display: none;
 }
 
 @include u-mqMax {
-    .u-pcDb {
-        display: none;
-    }
+  .u-pcDb {
+    display: none;
+  }
 
-    .u-spDb {
-        display: block;
-    }
+  .u-spDb {
+    display: block;
+  }
 }

@@ -1,5 +1,5 @@
 @mixin u-mqMax($mw: 768px) {
-    @media screen and (max-width: $mw) {
-        @content;
-    }
+  @media screen and (max-width: $mw) {
+    @content;
+  }
 }
