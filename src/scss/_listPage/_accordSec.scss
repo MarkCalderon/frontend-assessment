@@ -37,11 +37,13 @@
   }
 
   &-itemcontent {
+    padding: 0 20px;
     max-height: 0;
     overflow: hidden;
     transition: .7s linear;
 
     &.isToggle {
+      padding: 20px;
       max-height: 100px;
     }
 
