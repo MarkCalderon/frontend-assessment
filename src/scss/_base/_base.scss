@@ -2,8 +2,16 @@
   display: none;
 }
 
+.u-pcDf {
+  display: flex;
+}
+
 @include u-mqMax {
   .u-pcDb {
+    display: none;
+  }
+
+  .u-pcDf {
     display: none;
   }
 
